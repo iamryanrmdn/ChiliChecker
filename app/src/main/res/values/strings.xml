@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ChiliChecker</string>
+    <!--- Welcome Screen -->
+    <string name="title_welcome">Welcome</string>
+    <string name="desc_welcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor, ligula nec fermentum posuere, lorem erat porta velit, in convallis tortor ligula eu odio.</string>
+    <string name="get_started">Get Started</string>
+    <string name="content_desc">Image View</string>
+
+
+    <!--- Login Screen -->
+    <string name="title_login">Login</string>
+    <string name="desc_login">Welcome back you’ve\nbeen missed!</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="msg_no_account">Don\'t have account?</string>
+    <string name="signup">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!--- SignUp Screen -->
+    <string name="title_signup">Sign Up</string>
+    <string name="desc_signup">Create an account</string>
+    <string name="msg_have_account">Already have account?</string>
+    <string name="login">Log In</string>
+    <string name="username">Username</string>
+
+    <!--- Main Screen -->
+</resources>
