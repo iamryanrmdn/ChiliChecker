@@ -140,7 +140,7 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
         <TextView
-            android:id="@+id/label_signup"
+            android:id="@+id/label_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
