@@ -22,51 +22,6 @@
     <string name="msg_have_account">Already have account?</string>
     <string name="login">Log In</string>
     <string name="username">Username</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
 
     <!--- Main Screen -->
-    <string name="main">Home Screen Fragment</string>
-    <string name="menu">Menu</string>
-    <string name="scan">Scan Chili</string>
-    <string name="bookmark_home">Bookmark</string>
-    <string name="geo_chili">Geo Chili</string>
-    <string name="information">Information</string>
-
-    <!--- Scan Screen -->
-    <string name="text_scan">Take picture of your chili to know\nthe type and more</string>
-    <string name="btn_gallery">Gallery</string>
-    <string name="btn_camera">Camera</string>
-    <string name="btn_scan">Scan</string>
-    <string name="content_desc_img_scan">Image Scan</string>
-
-    <!--- Result Screen -->
-    <string name="type">Type :</string>
-    <string name="result_type">Cabai Rawit</string>
-    <string name="btn_upload_again">Upload Again</string>
-    <string name="btn_view_detail">View Detail</string>
-    <string name="content_desc_img_result">Image Result</string>
-
-    <!--- Detail Screen -->
-    <string name="title_care">How To Care</string>
-    <string name="desc_care">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
-    <string name="market_price">Market Price</string>
-    <string name="price">20.000 "-" 30.000 / Kg</string>
-
-    <!--- Bookmark Screen -->
-    <string name="bookmark">Bookmark Screen</string>
-
-    <!--- Information Screen -->
-    <string name="information_2">Recommendation Screen Fragment</string>
-
-    <!--- Custom View -->
-    <string name="error_validation_email">Invalid Email</string>
-    <string name="error_validation_password">Password must not be less than 8 characters</string>
-
-    <!--- Menu -->
-    <string name="menu_setting">Setting</string>
-    <string name="menu_logout">Log Out</string>
-    <string name="title_activity_maps">MapsActivity</string>
 </resources>
