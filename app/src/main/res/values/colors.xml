@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red_text">#FF0032</color>
     <color name="pink">#FFD5DE</color>
+    <color name="background_nav">#EEEEEE</color>
+    <color name="my_light_primary">#FFD5DE</color>
+    <color name="my_dark_primary">#373A40</color>
 </resources>
