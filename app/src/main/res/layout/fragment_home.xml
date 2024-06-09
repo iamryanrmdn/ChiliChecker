@@ -16,10 +16,6 @@
         android:text="@string/home"
         android:textAlignment="center"
         android:textSize="20sp"
-<<<<<<< HEAD
-        android:textStyle="bold"
-=======
->>>>>>> ea1a867 (Add Bottom Navigation Bar)
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
