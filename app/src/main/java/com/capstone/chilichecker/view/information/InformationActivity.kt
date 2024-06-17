@@ -15,5 +15,16 @@ class InformationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
+
+        backButton()
+    }
+
+    private fun backButton() {
+        binding.btnBack.setOnClickListener {
+            super.onBackPressed()
+            finish()
+        }
     }
 }

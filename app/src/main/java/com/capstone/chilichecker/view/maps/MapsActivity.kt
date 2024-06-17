@@ -27,6 +27,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        supportActionBar?.hide()
+
+        backButton()
     }
 
     /**
@@ -45,5 +49,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    }
+
+    private fun backButton() {
+        binding.btnBack.setOnClickListener {
+            super.onBackPressed()
+            finish()
+        }
     }
 }

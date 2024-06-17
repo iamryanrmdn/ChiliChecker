@@ -7,6 +7,7 @@
     android:layout_margin="10dp"
     app:cardCornerRadius="15dp"
     app:cardElevation="10dp"
+    app:cardBackgroundColor="@color/card_color"
     android:id="@+id/cv_bookmark">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,6 +32,8 @@
             android:layout_height="wrap_content"
             android:text="@string/type"
             android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintStart_toStartOf="@id/img_bookmark"
             app:layout_constraintEnd_toEndOf="@+id/text_result"
             app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +46,8 @@
             android:layout_marginEnd="64dp"
             android:text="@string/result_type"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/roboto_bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/text_type"

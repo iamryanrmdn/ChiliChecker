@@ -4,16 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.capstone.chilichecker.R
 import com.capstone.chilichecker.databinding.ActivityMainBinding
 import com.capstone.chilichecker.view.bookmark.BookmarkActivity
 import com.capstone.chilichecker.view.information.InformationActivity
 import com.capstone.chilichecker.view.maps.MapsActivity
 import com.capstone.chilichecker.view.scan.ScanActivity
+import com.capstone.chilichecker.view.setting.SettingActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,27 +22,48 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
+        menuBar()
         navigation()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.top_app_bar_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.top_app_bar_menu, menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            R.id.menu_setting -> {
+//                startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+//                true
+//            }
+//
+//            R.id.menu_logout -> {
+//                //Coming Soon
+//                finish()
+//                true
+//            }
+//
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.menu_setting -> {
-                //Coming Soon
-                true
+    private fun menuBar() {
+        binding.topAppBar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menu_setting -> {
+                    startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+                    true
+                }
+
+                R.id.menu_logout -> {
+                    //Coming Soon
+                    finish()
+                    true
+                }
+
+                else -> false
             }
-
-            R.id.menu_logout -> {
-                //Coming Soon
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
         }
     }
 

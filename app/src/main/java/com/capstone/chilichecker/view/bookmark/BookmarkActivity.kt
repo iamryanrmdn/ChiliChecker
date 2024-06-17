@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.capstone.chilichecker.R
 import com.capstone.chilichecker.databinding.ActivityBookmarkBinding
 
+@Suppress("DEPRECATION")
 class BookmarkActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityBookmarkBinding
@@ -16,6 +17,15 @@ class BookmarkActivity : AppCompatActivity() {
         binding = ActivityBookmarkBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
 
+        backButton()
+    }
+
+    private fun backButton() {
+        binding.btnBack.setOnClickListener {
+            super.onBackPressed()
+            finish()
+        }
     }
 }

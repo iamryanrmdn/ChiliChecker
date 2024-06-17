@@ -41,9 +41,9 @@ class ScanActivity : AppCompatActivity() {
             finish()
         }
 
-        backButton()
-
         supportActionBar?.hide()
+
+        backButton()
     }
 
     private val launchGallery = registerForActivityResult(
