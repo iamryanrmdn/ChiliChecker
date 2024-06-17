@@ -11,11 +11,11 @@
         android:id="@+id/img_splash_screen"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        tools:src="@tools:sample/backgrounds/scenic"
+        android:src="@drawable/img_chili_checker"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/content_desc_splash_screen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
