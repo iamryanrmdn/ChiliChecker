@@ -29,7 +29,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         supportActionBar?.hide()
-
         backButton()
     }
 
