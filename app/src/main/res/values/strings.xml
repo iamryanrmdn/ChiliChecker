@@ -5,8 +5,8 @@
     <string name="content_desc_splash_screen">Image Scan</string>
 
     <!--- Welcome Screen -->
-    <string name="title_welcome">Welcome</string>
-    <string name="desc_welcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor, ligula nec fermentum posuere, lorem erat porta velit, in convallis tortor ligula eu odio.</string>
+    <string name="title_welcome">Let\'s find out the types of chilli</string>
+    <string name="desc_welcome">Welcome to ChiliChecker, your ultimate tool for identifying various types of chili peppers! Whether you are a culinary enthusiast, a farmer, or just curious about the different varieties of chili peppers, this app is here to help you. Let\'s get started!</string>
     <string name="get_started">Get Started</string>
     <string name="content_desc">Image View</string>
 
@@ -47,6 +47,7 @@
     <string name="btn_camera">Camera</string>
     <string name="btn_scan">Scan</string>
     <string name="content_desc_img_scan">Image Scan</string>
+    <string name="empty_image_warning">Please insert the image file first</string>
 
     <!--- Result Screen -->
     <string name="result">Result</string>

@@ -4,22 +4,29 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
+import android.view.View
+import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.capstone.chilichecker.R
 import com.capstone.chilichecker.databinding.ActivityScanBinding
 import com.capstone.chilichecker.di.getImageUri
+import com.capstone.chilichecker.di.reduceFileImage
+import com.capstone.chilichecker.di.uriToFile
+import com.capstone.chilichecker.view.PredictViewModelFactory
 import com.capstone.chilichecker.view.result.ResultActivity
 
-@Suppress("DEPRECATION")
 class ScanActivity : AppCompatActivity() {
+
+    private val scanViewModel by viewModels<ScanViewModel> {
+        PredictViewModelFactory.getInstance(this)
+    }
 
     private lateinit var binding: ActivityScanBinding
     private var currentImageUri: Uri? = null
+    private var token: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +42,10 @@ class ScanActivity : AppCompatActivity() {
         }
 
         binding.btnScan.setOnClickListener {
-            //scanImage()
-            val intent = Intent(this, ResultActivity::class.java)
-            startActivity(intent)
-            finish()
+            uploadImage()
         }
 
         supportActionBar?.hide()
-
         backButton()
     }
 
@@ -81,10 +84,42 @@ class ScanActivity : AppCompatActivity() {
         }
     }
 
+    private fun uploadImage() {
+        scanViewModel.getSession().observe(this) {
+            token = "Bearer " + it.token
+        }
+        currentImageUri?.let { uri ->
+            val imageFile = uriToFile(uri, this).reduceFileImage()
+            Log.d("Image File", "showImage: ${imageFile.path}")
+
+            showLoading()
+            scanViewModel.uploadImage(imageFile)
+            scanViewModel.uploadImageResponse.observe(this@ScanActivity) { response ->
+                if (response.status == "success") {
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        } ?: showToast(getString(R.string.empty_image_warning))
+    }
+
     private fun backButton() {
         binding.btnBack.setOnClickListener {
             super.onBackPressed()
             finish()
         }
     }
+
+    private fun showLoading() {
+        scanViewModel.isLoading.observe(this@ScanActivity) {
+            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
 }
