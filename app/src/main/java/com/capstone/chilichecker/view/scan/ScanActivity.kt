@@ -16,7 +16,8 @@ import com.capstone.chilichecker.di.getImageUri
 import com.capstone.chilichecker.di.reduceFileImage
 import com.capstone.chilichecker.di.uriToFile
 import com.capstone.chilichecker.view.PredictViewModelFactory
-import com.capstone.chilichecker.view.result.ResultActivity
+import com.capstone.chilichecker.view.detail.DetailActivity
+import com.capstone.chilichecker.view.main.MainActivity
 
 class ScanActivity : AppCompatActivity() {
 
@@ -85,21 +86,34 @@ class ScanActivity : AppCompatActivity() {
     }
 
     private fun uploadImage() {
-        scanViewModel.getSession().observe(this) {
-            token = "Bearer " + it.token
-        }
         currentImageUri?.let { uri ->
             val imageFile = uriToFile(uri, this).reduceFileImage()
             Log.d("Image File", "showImage: ${imageFile.path}")
 
-            showLoading()
-            scanViewModel.uploadImage(imageFile)
-            scanViewModel.uploadImageResponse.observe(this@ScanActivity) { response ->
-                if (response.status == "success") {
-                    val intent = Intent(this, ResultActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                    finish()
+            scanViewModel.getSession().observe(this) { user ->
+                user?.let {
+                    showLoading()
+                    scanViewModel.uploadImage(imageFile)
+                    scanViewModel.uploadImageResponse.observe(this@ScanActivity) { response ->
+                        if (response?.data != null) {
+                            val data = response.data
+                            val intent = Intent(this, DetailActivity::class.java).apply {
+                                putExtra("label", data.label)
+                                putExtra("description", data.description)
+                                putExtra("marketPrice", data.marketPrice)
+                                putExtra("careInstructions", data.careInstructions)
+                                putExtra("name", data.name)
+                                putExtra("suitableDishes", data.suitableDishes)
+                                putExtra("image", currentImageUri.toString())
+                            }
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            showToast(
+                                response?.message ?: getString(R.string.failed_to_get_response)
+                            )
+                        }
+                    }
                 }
             }
         } ?: showToast(getString(R.string.empty_image_warning))
@@ -107,9 +121,18 @@ class ScanActivity : AppCompatActivity() {
 
     private fun backButton() {
         binding.btnBack.setOnClickListener {
-            super.onBackPressed()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
+    }
+
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showLoading() {

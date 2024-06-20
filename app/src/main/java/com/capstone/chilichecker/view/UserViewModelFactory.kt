@@ -11,23 +11,24 @@ import com.capstone.chilichecker.view.signup.SignupViewModel
 class UserViewModelFactory(private val repository: UserRepository) :
     ViewModelProvider.NewInstanceFactory() {
 
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return when {
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return when {
 
-                modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
-                    LoginViewModel(repository) as T
-                }
-
-                modelClass.isAssignableFrom(SignupViewModel::class.java) -> {
-                    SignupViewModel(repository) as T
-                }
-
-                else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
+            modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
+                LoginViewModel(repository) as T
             }
+
+            modelClass.isAssignableFrom(SignupViewModel::class.java) -> {
+                SignupViewModel(repository) as T
+            }
+
+            else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
+    }
 
     companion object {
-        fun getInstance(context: Context) = UserViewModelFactory(Injection.provideRepository(context))
+        fun getInstance(context: Context) =
+            UserViewModelFactory(Injection.provideRepository(context))
     }
 }

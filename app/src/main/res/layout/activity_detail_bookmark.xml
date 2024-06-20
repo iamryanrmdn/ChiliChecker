@@ -12,7 +12,6 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/btn_back"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginStart="36dp"
@@ -135,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/market_price"
+                    android:text="@string/title_price"
                     android:textSize="16sp"
                     android:textColor="@color/text_color"
                     android:fontFamily="@font/roboto_bold"

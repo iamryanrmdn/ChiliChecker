@@ -4,8 +4,6 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -43,28 +41,6 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         setupData()
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.top_app_bar_menu, menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when (item.itemId) {
-//            R.id.menu_setting -> {
-//                startActivity(Intent(this@MainActivity, SettingActivity::class.java))
-//                true
-//            }
-//
-//            R.id.menu_logout -> {
-//                //Coming Soon
-//                finish()
-//                true
-//            }
-//
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
 
     private fun menuBar() {
         binding.topAppBar.setOnMenuItemClickListener { item ->
@@ -108,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupData() {
         showLoading()
         mainViewModel.getSession().observe(this@MainActivity) {
-            token = "Bearer " + it.token
+            token = it.token
             Log.d(TAG, "setupSession: $token")
             Log.d(TAG, "setupName: ${it.email}")
         }

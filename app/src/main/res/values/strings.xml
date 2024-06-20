@@ -14,7 +14,6 @@
     <!--- Login Screen -->
     <string name="title_login">Login</string>
     <string name="desc_login">Welcome back you’ve\nbeen missed!</string>
-    <string name="forgot_password">Forgot your password?</string>
     <string name="msg_no_account">Don\'t have account?</string>
     <string name="signup">Sign Up</string>
     <string name="email">Email</string>
@@ -26,14 +25,8 @@
     <string name="msg_have_account">Already have account?</string>
     <string name="login">Log In</string>
     <string name="username">Username</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
 
     <!--- Main Screen -->
-    <string name="main">Home Screen Fragment</string>
-    <string name="menu">Menu</string>
     <string name="scan">Scan Chili</string>
     <string name="bookmark_home">Bookmark</string>
     <string name="geo_chili">Geo Chili</string>
@@ -47,22 +40,24 @@
     <string name="btn_camera">Camera</string>
     <string name="btn_scan">Scan</string>
     <string name="content_desc_img_scan">Image Scan</string>
+    <string name="failed_to_get_response">Scan Failed</string>
     <string name="empty_image_warning">Please insert the image file first</string>
-
-    <!--- Result Screen -->
-    <string name="result">Result</string>
-    <string name="type">Type :</string>
-    <string name="result_type">Cabai Rawit</string>
-    <string name="btn_upload_again">Upload Again</string>
-    <string name="btn_view_detail">View Detail</string>
     <string name="content_desc_img_result">Image Result</string>
 
     <!--- Detail Screen -->
+    <string name="type">Type :</string>
+    <string name="result_type">Cabai Rawit</string>
     <string name="detail">Detail</string>
     <string name="title_care">How To Care</string>
     <string name="desc_care">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
-    <string name="market_price">Market Price</string>
+    <string name="title_description">Description</string>
+    <string name="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+    <string name="title_price">Market Price</string>
     <string name="price">20.000 "-" 30.000 / Kg</string>
+    <string name="title_name">Name</string>
+    <string name="desc_name">Name of Chili</string>
+    <string name="title_suitable_dishes">Suitable Dishes</string>
+    <string name="desc_suitable_dishes">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
 
     <!--- Bookmark Screen -->
     <string name="bookmark">Bookmark</string>
@@ -71,7 +66,6 @@
     <string name="detail_bookmark">Bookmark</string>
 
     <!--- Information Screen -->
-    <string name="information_2">Recommendation Screen Fragment</string>
 
     <!--- Setting Screen -->
     <string name="setting">Settings</string>
