@@ -16,7 +16,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title_welcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/img_welcome"
+        android:src="@drawable/img_welcome_to_app"
         android:contentDescription="@string/content_desc"/>
 
 
@@ -53,6 +53,7 @@
         app:layout_constraintStart_toStartOf="parent" />
     
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_get_started"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"

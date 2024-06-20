@@ -12,10 +12,6 @@ import com.capstone.chilichecker.databinding.ActivityDetailBinding
 import com.capstone.chilichecker.view.PredictViewModelFactory
 import com.capstone.chilichecker.view.bookmark.BookmarkViewModel
 import com.capstone.chilichecker.view.scan.ScanActivity
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
-import java.io.File
 
 class DetailActivity : AppCompatActivity() {
 
@@ -36,6 +32,7 @@ class DetailActivity : AppCompatActivity() {
         setupDetail()
         supportActionBar?.hide()
         backButton()
+        scanAgain()
         addToBookmark()
     }
 
@@ -84,6 +81,14 @@ class DetailActivity : AppCompatActivity() {
 
     private fun backButton() {
         binding.btnBack.setOnClickListener {
+            val intent = Intent(this, ScanActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun scanAgain() {
+        binding.btnUploadAgain.setOnClickListener {
             val intent = Intent(this, ScanActivity::class.java)
             startActivity(intent)
             finish()
