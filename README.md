@@ -1,1 +1,3 @@
-#ChiliChecker
+# ChiliChecker
+
+# Introduction 👋
