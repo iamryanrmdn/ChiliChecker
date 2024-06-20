@@ -46,7 +46,6 @@
             android:padding="8dp">
             
             <TextView
-                android:id="@+id/text_total_scan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/total_scan"
@@ -57,7 +56,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_number_scan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/number_scan"
@@ -158,7 +156,6 @@
 
                     <!-- Centered Text -->
                     <TextView
-                        android:id="@+id/text_bookmark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/bookmark_home"
@@ -222,7 +219,6 @@
                         app:layout_constraintStart_toStartOf="parent">
 
                         <ImageView
-                            android:id="@+id/img_geo_chili"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:src="@drawable/img_geo_chili"
@@ -231,7 +227,6 @@
 
                     <!-- Centered Text -->
                     <TextView
-                        android:id="@+id/text_geo_chili"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/geo_chili"
@@ -285,7 +280,6 @@
 
                     <!-- Centered Text -->
                     <TextView
-                        android:id="@+id/text_information"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/information"

@@ -16,7 +16,6 @@ class MainRepository private constructor(
     val isLoading: LiveData<Boolean> = _isLoading
 
     private val _toastText = MutableLiveData<Event<String>>()
-    val toastText: LiveData<Event<String>> = _toastText
 
     fun getSession(): Flow<UserModel> {
         return userPreference.getSession()

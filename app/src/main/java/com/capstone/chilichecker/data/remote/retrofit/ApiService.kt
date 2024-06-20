@@ -36,7 +36,7 @@ interface ApiService {
     @Multipart
     @POST("predict")
     fun uploadImage(
-        @Part file: MultipartBody.Part
+        @Part image: MultipartBody.Part
     ): Call<PredictResponse>
 
     @Multipart

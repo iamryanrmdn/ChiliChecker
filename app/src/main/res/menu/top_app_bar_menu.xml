@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/menu"
         android:icon="@drawable/ic_menu_24"
         android:title=""
         app:iconTint="@color/color_icon"

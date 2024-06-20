@@ -1,7 +1,9 @@
 package com.capstone.chilichecker.view.maps
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.capstone.chilichecker.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -11,11 +13,19 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.capstone.chilichecker.databinding.ActivityMapsBinding
+import com.capstone.chilichecker.view.MainViewModelFactory
+import com.capstone.chilichecker.view.main.MainActivity
+import com.capstone.chilichecker.view.scan.ScanActivity
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
+    private val mapsViewModel by viewModels<MapsViewModel> {
+        MainViewModelFactory.getInstance(this)
+    }
+
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+    private var token: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         supportActionBar?.hide()
         backButton()
+        setupUser()
     }
 
     /**
@@ -50,10 +61,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
+    private fun setupUser() {
+        mapsViewModel.getSession().observe(this@MapsActivity) {
+            token = it.token
+        }
+    }
+
     private fun backButton() {
         binding.btnBack.setOnClickListener {
-            super.onBackPressed()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
+    }
+
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
