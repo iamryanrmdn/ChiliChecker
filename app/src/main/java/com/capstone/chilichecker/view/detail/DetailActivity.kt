@@ -32,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
         setupDetail()
         supportActionBar?.hide()
         backButton()
-        scanAgain()
+        scanAgainButton()
         addToBookmark()
     }
 
@@ -87,7 +87,7 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun scanAgain() {
+    private fun scanAgainButton() {
         binding.btnUploadAgain.setOnClickListener {
             val intent = Intent(this, ScanActivity::class.java)
             startActivity(intent)
