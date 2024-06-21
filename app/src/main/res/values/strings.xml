@@ -60,10 +60,12 @@
     <string name="desc_suitable_dishes">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
 
     <!--- Bookmark Screen -->
-    <string name="bookmark">Bookmark</string>
+    <string name="add_to_bookmark">Add to Bookmark</string>
 
     <!--- Detail Bookmark Screen -->
     <string name="detail_bookmark">Bookmark</string>
+    <string name="upload_again">Upload Again</string>
+    <string name="bookmark">Bookmark</string>
 
     <!--- Information Screen -->
 
