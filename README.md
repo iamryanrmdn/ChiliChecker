@@ -2,7 +2,7 @@
 
 <p align="justify">Many people struggle to identify different types of chili peppers and understand their unique characteristics, which hinders culinary experimentation. Chili peppers come in a variety of shapes, sizes, colors, and heat levels, each with a distinct flavor. The lack of accessible information often leads to consumer confusion. ChiliChecker is an app designed to speed up chili identification and offer personalized recipe recommendations. With a simple interface, users can find different chili varieties and access detailed information about their flavor and uses. The app provides customized recipes based on the type of chili detected, a description of the chili variety, the market price range, and how to care for the chili variety.</p>
 
-#Introduction 👋
+# Introduction 👋
 Hi everyone! We are from C241-PS534. We consist of 7 people and these are my team members:
 
 | Bangkit ID | Name | Learning Path | University |LinkedIn |
