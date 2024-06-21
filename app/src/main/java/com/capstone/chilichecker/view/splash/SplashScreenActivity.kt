@@ -1,5 +1,6 @@
 package com.capstone.chilichecker.view.splash
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +13,7 @@ import com.capstone.chilichecker.view.main.MainActivity
 import com.capstone.chilichecker.view.main.MainViewModel
 import com.capstone.chilichecker.view.welcome.WelcomeActivity
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
 
     private val mainViewModel by viewModels<MainViewModel> {
